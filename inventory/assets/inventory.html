@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CyberStock 2000 - Y2K Compliant Inventory System</title>
+  <script>
+    function loadInventory() {
+      fetch('./inventory.json')
+        .then(response => response.json())
+        .then(data => {
+          const inventoryTable = document.getElementById('inventoryTable');
+          data.inventory.forEach(item => {
+            const row = inventoryTable.insertRow();
+            row.innerHTML = `
+              <td><font face="Courier New">${item.id}</font></td>
+              <td><font face="Courier New">${item.name}</font></td>
+              <td><font face="Courier New">${item.category}</font></td>
+              <td><font face="Courier New">${item.brand}</font></td>
+              <td><font face="Courier New">${item.model}</font></td>S
+              <td><font face="Courier New">${item.quantity}</font></td>
+              <td><font face="Courier New">${item.unit_price}</font></td>
+              <td><font face="Courier New">${item.supplier}</font></td>
+              <td><font face="Courier New"><a id="${item.id}" class="reserve-button" href="reserve.html?item=${encodeURIComponent(item.name)}">Reserve</a></font></td>
+            `;
+            if (inventoryTable.rows.length % 2 === 0) {
+              row.bgColor = "#E6E6FA";
+            }
+          });
+        })
+        .catch(error => console.error('Error loading inventory:', error));
+    }
+  </script>
+</head>
+
+<body bgcolor="#C0C0C0" text="#000080" link="#0000FF" vlink="#800080" alink="#FF0000" onload="loadInventory()">
+  <center>
+    <font face="Comic Sans MS, Arial, sans-serif">
+      <h1>
+        <blink>Welcome to CyberStock 2000</blink>
+      </h1>
+      <h2>The Ultimate Y2K-Ready Inventory Management Solution</h2>
+      <marquee scrollamount="3" behavior="alternate">
+        <font color="#FF0000">Best viewed in Netscape Navigator 4.0 or Internet Explorer 5.5</font>
+      </marquee>
+    </font>
+  </center>
+
+  <hr width="75%" color="#000080" size="4">
+
+  <table id="inventoryTable" border="1" cellpadding="5" cellspacing="0" width="100%">
+    <tr bgcolor="#008080">
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Cyber ID</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Digital Asset</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Techno-Category</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Cyber-Brand</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Model X-2000</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Quantum Count</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Credits</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Galactic Supplier</font>
+      </th>
+      <th>
+        <font face="Arial Black" color="#FFFFFF">Cyber-Reserve</font>
+      </th>
+    </tr>
+  </table>
+
+  <hr width="75%" color="#000080" size="4">
+
+  <center>
+    <font face="Arial, sans-serif" size="2">
+      <p>© 1999 MegaCorp Industries. All rights reserved.</p>
+      <p>For technical support, please contact our 24/7 helpline at 1-800-CYBER-HELP</p>
+      <p>
+        <img src="./Valid HTML 4.0.1.svg.png" alt="Valid HTML 4.01!" width="88" height="31">
+        <img src="./Netscape icon 128px.png" alt="Netscape Now!" width="30" height="30">
+      </p>
+    </font>
+  </center>
+
+  <script language="JavaScript">
+    < !-
+      function Y2K_Compliant() {
+        alert("This website is certified Y2K compliant. Prepare for the new millennium!");
+      }
+    //-->
+  </script>
+
+  <p align="center">
+    <input type="button" value="Check Y2K Compliance" onclick="Y2K_Compliant()">
+  </p>
+</body>
+
+</html>

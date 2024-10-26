@@ -1,0 +1,291 @@
+{
+  "inventory": [
+    {
+      "id": "E001",
+      "name": "Laptop",
+      "category": "Electronics",
+      "subcategory": "Computers",
+      "brand": "TechPro",
+      "model": "X1500",
+      "quantity": 25,
+      "unit_price": 899.99,
+      "supplier": "ElectroWholesale Inc.",
+      "reorder_level": 10,
+      "last_restocked": "2024-09-15",
+      "location": "Warehouse A",
+      "specs": {
+        "processor": "Intel i7",
+        "ram": "16GB",
+        "storage": "512GB SSD"
+      }
+    },
+    {
+      "id": "E002",
+      "name": "Desktop Computer",
+      "category": "Electronics",
+      "subcategory": "Computers",
+      "brand": "TechPro",
+      "model": "D2000",
+      "quantity": 15,
+      "unit_price": 1299.99,
+      "supplier": "ElectroWholesale Inc.",
+      "reorder_level": 5,
+      "last_restocked": "2024-09-10",
+      "location": "Warehouse A",
+      "specs": {
+        "processor": "Intel i9",
+        "ram": "32GB",
+        "storage": "1TB SSD"
+      }
+    },
+    {
+      "id": "E003",
+      "name": "Smartphone",
+      "category": "Electronics",
+      "subcategory": "Mobile Devices",
+      "brand": "Connectix",
+      "model": "C20",
+      "quantity": 50,
+      "unit_price": 499.99,
+      "supplier": "MobileTech Distributors",
+      "reorder_level": 15,
+      "last_restocked": "2024-09-20",
+      "location": "Warehouse B",
+      "specs": {
+        "screen": "6.7 inch",
+        "storage": "256GB",
+        "camera": "48MP"
+      }
+    },
+    {
+      "id": "E004",
+      "name": "Tablet",
+      "category": "Electronics",
+      "subcategory": "Mobile Devices",
+      "brand": "Connectix",
+      "model": "T10",
+      "quantity": 30,
+      "unit_price": 349.99,
+      "supplier": "MobileTech Distributors",
+      "reorder_level": 10,
+      "last_restocked": "2024-09-18",
+      "location": "Warehouse B",
+      "specs": {
+        "screen": "10.9 inch",
+        "storage": "128GB",
+        "processor": "A14 chip"
+      }
+    },
+    {
+      "id": "E005",
+      "name": "Wireless Headphones",
+      "category": "Electronics",
+      "subcategory": "Audio",
+      "brand": "SoundMax",
+      "model": "WH-100",
+      "quantity": 100,
+      "unit_price": 149.99,
+      "supplier": "AudioTech Solutions",
+      "reorder_level": 25,
+      "last_restocked": "2024-09-12",
+      "location": "Warehouse A",
+      "specs": {
+        "battery": "30 hours",
+        "connectivity": "Bluetooth 5.0",
+        "noise_cancelling": true
+      }
+    },
+    {
+      "id": "O001",
+      "name": "Printer Paper",
+      "category": "Office Supplies",
+      "subcategory": "Paper Products",
+      "brand": "PaperCo",
+      "model": "A4 Standard",
+      "quantity": 500,
+      "unit_price": 4.99,
+      "supplier": "Office Essentials Ltd.",
+      "reorder_level": 100,
+      "last_restocked": "2024-09-25",
+      "location": "Warehouse C",
+      "specs": {
+        "size": "A4",
+        "weight": "80gsm",
+        "sheets_per_ream": 500
+      }
+    },
+    {
+      "id": "O002",
+      "name": "Ballpoint Pens",
+      "category": "Office Supplies",
+      "subcategory": "Writing Instruments",
+      "brand": "WriteRight",
+      "model": "Smooth Glide",
+      "quantity": 1000,
+      "unit_price": 0.99,
+      "supplier": "Stationery World",
+      "reorder_level": 200,
+      "last_restocked": "2024-09-22",
+      "location": "Warehouse C",
+      "specs": {
+        "color": "Blue",
+        "point_size": "0.7mm",
+        "pack_size": 12
+      }
+    },
+    {
+      "id": "O003",
+      "name": "Sticky Notes",
+      "category": "Office Supplies",
+      "subcategory": "Paper Products",
+      "brand": "NoteIt",
+      "model": "Standard Square",
+      "quantity": 750,
+      "unit_price": 2.99,
+      "supplier": "Office Essentials Ltd.",
+      "reorder_level": 150,
+      "last_restocked": "2024-09-20",
+      "location": "Warehouse C",
+      "specs": {
+        "size": "3x3 inch",
+        "color": "Yellow",
+        "sheets_per_pad": 100
+      }
+    },
+    {
+      "id": "F001",
+      "name": "Office Chair",
+      "category": "Furniture",
+      "subcategory": "Seating",
+      "brand": "ErgoComfort",
+      "model": "Executive Pro",
+      "quantity": 15,
+      "unit_price": 199.99,
+      "supplier": "FurniturePlus Co.",
+      "reorder_level": 5,
+      "last_restocked": "2024-09-08",
+      "location": "Warehouse D",
+      "specs": {
+        "material": "Mesh",
+        "color": "Black",
+        "adjustable": true,
+        "weight_capacity": "300 lbs"
+      }
+    },
+    {
+      "id": "F002",
+      "name": "Standing Desk",
+      "category": "Furniture",
+      "subcategory": "Desks",
+      "brand": "ErgoComfort",
+      "model": "Elevate Pro",
+      "quantity": 10,
+      "unit_price": 449.99,
+      "supplier": "FurniturePlus Co.",
+      "reorder_level": 3,
+      "last_restocked": "2024-09-05",
+      "location": "Warehouse D",
+      "specs": {
+        "material": "Bamboo",
+        "height_range": "24-50 inches",
+        "electric": true,
+        "weight_capacity": "250 lbs"
+      }
+    },
+    {
+      "id": "F003",
+      "name": "Filing Cabinet",
+      "category": "Furniture",
+      "subcategory": "Storage",
+      "brand": "StorageMaster",
+      "model": "4-Drawer Vertical",
+      "quantity": 10,
+      "unit_price": 149.99,
+      "supplier": "Office Furniture Depot",
+      "reorder_level": 3,
+      "last_restocked": "2024-09-15",
+      "location": "Warehouse D",
+      "specs": {
+        "material": "Steel",
+        "color": "Gray",
+        "dimensions": "15x25x52 inches",
+        "lockable": true
+      }
+    },
+    {
+      "id": "T001",
+      "name": "Laser Printer",
+      "category": "Technology",
+      "subcategory": "Printers",
+      "brand": "PrintTech",
+      "model": "LaserJet Pro",
+      "quantity": 20,
+      "unit_price": 299.99,
+      "supplier": "Office Tech Solutions",
+      "reorder_level": 5,
+      "last_restocked": "2024-09-17",
+      "location": "Warehouse B",
+      "specs": {
+        "type": "Laser",
+        "color": true,
+        "ppm": 27,
+        "wireless": true
+      }
+    },
+    {
+      "id": "T002",
+      "name": "Wireless Mouse",
+      "category": "Technology",
+      "subcategory": "Computer Accessories",
+      "brand": "TechPro",
+      "model": "M100",
+      "quantity": 75,
+      "unit_price": 24.99,
+      "supplier": "ElectroWholesale Inc.",
+      "reorder_level": 20,
+      "last_restocked": "2024-09-21",
+      "location": "Warehouse A",
+      "specs": {
+        "connectivity": "Bluetooth",
+        "battery_life": "6 months",
+        "dpi": "4000"
+      }
+    },
+    {
+      "id": "T003",
+      "name": "Wireless Keyboard",
+      "category": "Technology",
+      "subcategory": "Computer Accessories",
+      "brand": "TechPro",
+      "model": "K200",
+      "quantity": 60,
+      "unit_price": 39.99,
+      "supplier": "ElectroWholesale Inc.",
+      "reorder_level": 15,
+      "last_restocked": "2024-09-21",
+      "location": "Warehouse A",
+      "specs": {
+        "layout": "Full size",
+        "connectivity": "Bluetooth",
+        "battery_life": "12 months"
+      }
+    }
+  ],
+  "metadata": {
+    "last_updated": "2024-10-26",
+    "total_items": 2670,
+    "total_value": 89247.25,
+    "locations": [
+      "Warehouse A",
+      "Warehouse B",
+      "Warehouse C",
+      "Warehouse D"
+    ],
+    "categories": [
+      "Electronics",
+      "Office Supplies",
+      "Furniture",
+      "Technology"
+    ]
+  }
+}

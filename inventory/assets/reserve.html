@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CyberStock 2000 - Inventory Reservation</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", Arial, sans-serif;
+      background-color: #C0C0C0;
+      color: #000080;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #E6E6FA;
+      border: 2px solid #000080;
+    }
+
+    h1 {
+      text-align: center;
+      color: #FF0000;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label,
+    input,
+    select {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #008080;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #successMessage {
+      display: none;
+      background-color: #90EE90;
+      padding: 10px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      <blink>CyberStock 2000 Inventory Reservation</blink>
+    </h1>
+    <form id="reservationForm">
+      <label for="name">Your Cyber Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Electronic Mail Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="item">Cyber Item:</label>
+      <input type="text" id="item" name="item" readonly>
+
+      <label for="quantity">Quantum Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" required>
+
+      <input type="submit" value="Reserve Now!">
+    </form>
+
+    <div id="successMessage">
+      <h2>Reservation Successful!</h2>
+      <p>Your cyber item has been reserved. Prepare for the new millennium!</p>
+    </div>
+  </div>
+
+  <script>
+    // Get the item name from the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemName = urlParams.get('item');
+
+    // Set the item name in the form
+    document.getElementById('item').value = itemName || '';
+
+    document.getElementById('reservationForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('reservationForm').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

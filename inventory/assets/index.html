@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CyberStock 2000 - Secure Login Portal</title>
+  <script language="JavaScript">
+    function validateLogin() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === 'admin') {
+        alert('Access granted! Welcome to CyberStock 2000.');
+        window.location.href = 'inventory.html';
+      } else {
+        alert('Invalid credentials. Access denied!');
+      }
+    }
+  </script>
+</head>
+
+<body bgcolor="#C0C0C0" text="#000080" link="#0000FF" vlink="#800080" alink="#FF0000">
+  <center>
+    <font face="Comic Sans MS, Arial, sans-serif">
+      <h1>
+        <blink>CyberStock 2000 Login</blink>
+      </h1>
+      <h2>Secure Access to Y2K-Ready Inventory Management</h2>
+      <marquee scrollamount="3" behavior="alternate">
+        <font color="#FF0000">Warning: Unauthorized access will be reported to the Cyber Police!</font>
+      </marquee>
+    </font>
+  </center>
+
+  <hr width="75%" color="#000080" size="4">
+
+  <table border="2" cellpadding="5" cellspacing="0" align="center" bgcolor="#E6E6FA">
+    <tr>
+      <td>
+        <form onsubmit="validateLogin(); return false;">
+          <table>
+            <tr>
+              <td>
+                <font face="Arial Black">Username:</font>
+              </td>
+              <td><input type="text" id="username" size="20"></td>
+            </tr>
+            <tr>
+              <td>
+                <font face="Arial Black">Password:</font>
+              </td>
+              <td><input type="password" id="password" size="20"></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <input type="submit" value="Login to the Future">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <hr width="75%" color="#000080" size="4">
+
+  <center>
+    <font face="Arial, sans-serif" size="2">
+      <p>© 1999 MegaCorp Industries. All rights reserved.</p>
+      <p>For login assistance, please contact our 24/7 helpline at 1-800-CYBER-HELP</p>
+      <p>
+        <img src="./Valid HTML 4.0.1.svg.png" alt="Valid HTML 4.01!" width="88" height="31">
+        <img src="./Netscape icon 128px.png" alt="Netscape Now!" width="30" height="30">
+      </p>
+    </font>
+  </center>
+
+  <script language="JavaScript">
+    < !-
+      function Y2K_Compliant() {
+        alert("This login page is certified Y2K compliant. Your credentials are safe for the new millennium!");
+      }
+    //-->
+  </script>
+
+  <p align="center">
+    <input type="button" value="Verify Y2K Compliance" onclick="Y2K_Compliant()">
+  </p>
+</body>
+
+</html>
