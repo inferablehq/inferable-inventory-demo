@@ -1,14 +1,7 @@
-import { Inferable } from "inferable";
+import { Page } from "playwright";
 import { z } from "zod";
-import { chromium, Page } from "playwright";
+import { i } from "./inferable";
 import * as inventory from "./inventory";
-
-// Instantiate the Inferable client.
-const i = new Inferable({
-  // To get a new key, run:
-  // npx @inferable/cli auth keys create 'My New Machine Key' --type='cluster_machine'
-  apiSecret: process.env.INFERABLE_API_SECRET,
-});
 
 const service = i.service({
   name: "inventory",
@@ -35,25 +28,31 @@ service.register({
 });
 
 service.register({
-  name: "clickReserveButton",
-  description: "Click the reserve button for a specific item",
-  schema: {
-    input: z.object({ itemId: z.string() }),
-  },
-  func: inventory.clickReserveButton,
-});
-
-service.register({
-  name: "completeReservation",
+  name: "submitReservation",
   description: "Complete the reservation process for an item",
   schema: {
     input: z.object({
       customerName: z.string(),
       email: z.string(),
       quantity: z.number(),
+      itemId: z.string(),
     }),
   },
-  func: inventory.completeReservation,
+  func: inventory.submitReservation,
+});
+
+service.register({
+  name: "reserveItem",
+  description: "Complete the reservation process for an item",
+  schema: {
+    input: z.object({
+      customerName: z.string(),
+      email: z.string(),
+      quantity: z.number(),
+      itemId: z.string(),
+    }),
+  },
+  func: inventory.submitReservation,
 });
 
 service.start().then(() => {

@@ -26,9 +26,14 @@ func main() {
 		log.Fatalf("Failed to run migrations: %v", err)
 	}
 
-	// Start the server or run other application logic here
-	// For example:
-	// startServer()
+	// Register Inferable functions
+	err = registerInferableFunctions()
+	if err != nil {
+		log.Fatalf("Failed to register Inferable functions: %v", err)
+	}
 
 	log.Println("Application started successfully")
+
+	// Keep the application running
+	select {}
 }

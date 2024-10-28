@@ -6,7 +6,7 @@ prefix_output() {
 }
 
 # Start static server for inventory assets
-(cd inventory/assets && npx node-static -p 5556) 2>&1 | prefix_output "[Static Server]" &
+(cd inventory/assets && npx -y node-static -p 5556) 2>&1 | prefix_output "[Static Server]" &
 
 # Start inventory dev server
 (cd inventory && npm run dev) 2>&1 | prefix_output "[Inventory Server]" &

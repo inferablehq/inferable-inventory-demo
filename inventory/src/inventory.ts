@@ -41,16 +41,13 @@ export const getInventoryData = async (): Promise<InventoryItem[]> => {
   // Wait for the inventory table to load
   await page.waitForSelector("#inventoryTable");
 
-  // pause 5s for demo
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-
   // scroll to the bottom of the page
   await page.evaluate(() => {
     window.scrollTo(0, document.body.scrollHeight);
   });
 
-  // pause 5s for demo
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // pause 1s for demo
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   // Get all rows from the table except the header
   const rows = await page.$$("#inventoryTable tr:not(:first-child)");
@@ -75,17 +72,20 @@ export const getInventoryData = async (): Promise<InventoryItem[]> => {
   return inventoryData;
 };
 
-export const clickReserveButton = async ({
+export const submitReservation = async ({
+  customerName,
+  email,
+  quantity,
   itemId,
 }: {
+  customerName: string;
+  email: string;
+  quantity: number;
   itemId: string;
-}): Promise<void> => {
+}): Promise<{ reservationId: string }> => {
   if (!page) {
     throw new Error("Page is not initialized. Please login first.");
   }
-
-  // Wait for the inventory table to load
-  await page.waitForSelector("#inventoryTable");
 
   // Find and click the "Reserve" link for the specified item
   const reserveLink = await page.$(`a#${itemId}`);
@@ -95,20 +95,6 @@ export const clickReserveButton = async ({
 
   await reserveLink.click();
   console.log(`Clicked Reserve link for item: ${itemId}`);
-};
-
-export const completeReservation = async ({
-  customerName,
-  email,
-  quantity,
-}: {
-  customerName: string;
-  email: string;
-  quantity: number;
-}): Promise<void> => {
-  if (!page) {
-    throw new Error("Page is not initialized. Please login first.");
-  }
 
   // Wait for the reservation form to appear
   await page.waitForSelector("#reservationForm");
@@ -147,6 +133,10 @@ export const completeReservation = async ({
       "Reservation completed, but couldn't retrieve the success message."
     );
   }
+
+  return {
+    reservationId: "123",
+  };
 };
 
 interface InventoryItem {

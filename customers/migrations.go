@@ -15,6 +15,7 @@ func RunMigrations() error {
 	log.Println("Running migrations...")
 
 	migrations := []string{
+		dropAllTables,
 		createCustomersTable,
 		createCustomerOrdersTable,
 		createOrderItemsTable,
@@ -32,9 +33,15 @@ func RunMigrations() error {
 	return nil
 }
 
+const dropAllTables = `
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS customer_orders;
+DROP TABLE IF EXISTS customers;
+`
+
 const createCustomersTable = `
 CREATE TABLE IF NOT EXISTS customers (
-    id UUID PRIMARY KEY,
+    id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMP NOT NULL,
@@ -44,8 +51,8 @@ CREATE TABLE IF NOT EXISTS customers (
 
 const createCustomerOrdersTable = `
 CREATE TABLE IF NOT EXISTS customer_orders (
-    id UUID PRIMARY KEY,
-    customer_id UUID NOT NULL,
+    id VARCHAR(255) PRIMARY KEY,
+    customer_id VARCHAR(255) NOT NULL,
     total_price DECIMAL(10, 2) NOT NULL,
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL,
@@ -56,8 +63,8 @@ CREATE TABLE IF NOT EXISTS customer_orders (
 const createOrderItemsTable = `
 CREATE TABLE IF NOT EXISTS order_items (
     id SERIAL PRIMARY KEY,
-    order_id UUID NOT NULL,
-    product_id UUID NOT NULL,
+    order_id VARCHAR(255) NOT NULL,
+    product_id VARCHAR(255) NOT NULL,
     quantity INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES customer_orders(id)

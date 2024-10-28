@@ -65,6 +65,20 @@ func GetCustomer(params GetCustomerParams) (*Customer, error) {
 	return &customer, nil
 }
 
+type GetCustomerByEmailParams struct {
+	Email string
+}
+
+func GetCustomerByEmail(params GetCustomerByEmailParams) (*Customer, error) {
+	var customer Customer
+	err := db.QueryRow("SELECT id, name, email, created_at, updated_at FROM customers WHERE email = $1", params.Email).
+		Scan(&customer.ID, &customer.Name, &customer.Email, &customer.CreatedAt, &customer.UpdatedAt)
+	if err != nil {
+		return nil, err
+	}
+	return &customer, nil
+}
+
 // UpdateCustomerParams structure
 type UpdateCustomerParams struct {
 	ID    string
